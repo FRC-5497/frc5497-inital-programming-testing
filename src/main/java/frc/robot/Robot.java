@@ -17,27 +17,27 @@ public class Robot extends TimedRobot {
 
   /** Called once at the beginning of the robot program. */
   public Robot() {
-			controller = new PS4Controller(Config.controllerPortIndex);
+			controller = new PS4Controller(Config.controllerPortIndex); 
 			drivetrain = new SwerveDrivetrainController();
 			 
   }
 
   @Override
   public void teleopPeriodic() {
-			double speedX = -controller.getLeftY();
-			double speedY = controller.getLeftX();
-			double rotation = controller.getRightX();
-			boolean resetWheelPositions = controller.getR1Button();
+			double speedX = -controller.getLeftY(); // Reads joystick inputs fo speedX
+			double speedY = controller.getLeftX(); // Reads joystick input for speedY
+			double rotation = controller.getRightX(); // Reads joystick input for rotation
+			boolean resetWheelPositions = controller.getR1Button(); // Bool to check if R1 is pressed to reset wheels
 
 			if(resetWheelPositions){
-				drivetrain.resetWheels();
+				drivetrain.resetWheels(); // If R1 is press reset the wheels 
 				return;
 			}
 
 			double speedLimit = 1;
-			speedX = MathUtil.clamp(controller.getLeftY(), -speedLimit, speedLimit);
+			speedX = MathUtil.clamp(controller.getLeftY(), -speedLimit, speedLimit); // Sets the speed limit for the X and Y movement
 			speedY = MathUtil.clamp(controller.getLeftX(), -speedLimit, speedLimit);
 
-			drivetrain.drive(speedX, speedY, rotation);
+			drivetrain.drive(speedX, speedY, rotation); // sends the inputs to the drivetrain to move the robot
   }
 }
