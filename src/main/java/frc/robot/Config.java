@@ -20,7 +20,7 @@ public class Config {
 
 		public static class CanID{
 				public static class DriveMotor{
-						public static final int topLeft = 15; // Assigns IDs for the drive motors I 
+						public static final int topLeft = 15; // Assigns IDs for the drive motors
 						public static final int topRight = 7;
 						public static final int bottomLeft = 13;
 						public static final int bottomRight = 17;
