@@ -12,7 +12,7 @@ public class Config {
 		public static class WheelPositions{
 				// each translation is relative to the robots center
 				// measurements are in meters here
-				public static final Translation2d topLeft = new Translation2d(-inchesToMeters(13), inchesToMeters(13));
+				public static final Translation2d topLeft = new Translation2d(-inchesToMeters(13), inchesToMeters(13)); // Assigns the coordinates for each of the wheels
 				public static final Translation2d topRight = new Translation2d(inchesToMeters(13), inchesToMeters(13));
 				public static final Translation2d bottomLeft = new Translation2d(-inchesToMeters(13), -inchesToMeters(13));
 				public static final Translation2d bottomRight = new Translation2d(-inchesToMeters(13), inchesToMeters(13));
